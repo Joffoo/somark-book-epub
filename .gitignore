@@ -1,0 +1,51 @@
+# ========================================================
+# Git Ignore Rules for somark-book-epub
+# 防泄漏铁律：杜绝任何 API Key、临时数据、本地生成物进入版本库
+# ========================================================
+
+# 1. 敏感凭证与环境变量 (API Keys & Secrets Protection)
+.env
+.env.*
+*.env
+!.env.example
+*.key
+*token*
+*secret*
+*api_key*
+
+# 2. Python 编译与缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# 3. 图书处理临时工作目录与产物 (Book Digitization Artifacts)
+*_output/
+*_work/
+parts/
+raw_md/
+raw_json/
+localized_md/
+assembled_chapters/
+images/
+somark_output/
+preview_toc.pdf
+
+# 4. 任务清单与结果日志 (Run Logs & Manifests)
+somark_jobs.json
+slice_plan.json
+results_index.json
+*.log
+*.tmp
+*.tmp.epub
+
+# 5. 最终发布产物与打包文件
+*.epub
+*.skill
+dist/
+
+# 6. 系统与 IDE 配置
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
